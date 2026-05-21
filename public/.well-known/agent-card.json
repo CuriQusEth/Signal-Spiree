@@ -27,6 +27,28 @@
       "description": "Main agent control API"
     }
   ],
+  "skills": [
+    {
+      "id": "signal-detection",
+      "name": "Signal Detection",
+      "description": "Detects signals and anomalies in the spire."
+    },
+    {
+      "id": "spire-analysis",
+      "name": "Spire Analysis",
+      "description": "Analyzes the structural integrity and stability of the spire."
+    },
+    {
+      "id": "multi-signal-orchestration",
+      "name": "Multi-Signal Orchestration",
+      "description": "Manages and orchestrates multiple signal streams simultaneously."
+    },
+    {
+      "id": "opportunity-management",
+      "name": "Opportunity Management",
+      "description": "Identifies and manages intelligent opportunities based on predictive analytics."
+    }
+  ],
   "capabilities": [
     "signal-detection",
     "spire-analysis",

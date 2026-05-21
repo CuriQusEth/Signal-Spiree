@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
@@ -6,6 +7,8 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  // Allow all origins for the MCP endpoints
+  app.use(cors());
   app.use(express.json());
 
   // === MCP Protocol Endpoint ===
