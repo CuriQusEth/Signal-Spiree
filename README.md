@@ -1,15 +1,14 @@
 # 🗼 Signal Spire
 
-**Signal Spire** is an atmospheric, mobile-first vertical climbing and tower-building endless game on the **Base Mainnet**. 
+**Signal Spire Orchestrator** is an atmospheric, mobile-first vertical climbing and tower-building endless game on the **Base Mainnet**. 
 
 You are a **Signal Warden**, constructing and climbing a massive neon signal spire that pierces the sky to connect with distant stars, ancient satellites, and lost civilizations. The higher you build and climb, the stronger the signal becomes — but the world becomes more unstable.
 
 ## 🎮 Core Gameplay Mechanics
-- **Vertical Endless Climber:** Tap to jump, climb, and ascend through various atmospheric layers (Ionosphere, Nebula Veil, Void Strata).
-- **Module Placement:** Strategically place Signal Modules (Antennas, Amplifiers, Relays, Resonators) to extend the spire.
+- **Vertical Endless Climber:** Tap to jump, climb, and ascend through various atmospheric layers.
+- **Module Placement:** Strategically place Signal Modules to extend the spire.
 - **Structural Integrity:** Poor placements cause instability—modules must be placed in balanced patterns or the spire sways and breaks.
-- **Signal Chains:** Perfectly aligned modules create powerful upward signal chains, generating massive score multipliers and triggering "Signal Pulses".
-- **Dynamic Challenges:** Face increasing wind shear, complex physics, and the ultimate high-risk "Collapse Mode" when structural integrity drops.
+- **Signal Chains:** Perfectly aligned modules create powerful upward signal chains, generating massive score multipliers.
 
 ## 🔗 On-Chain & Web3 Features
 Built natively for the **Base ecosystem**:
@@ -20,24 +19,43 @@ Built natively for the **Base ecosystem**:
 
 ## 🤖 Orchestrator Agent (MCP)
 Signal Spire runs an integrated **ERC-8004 AI Agent** ("Signal Spire Orchestrator") which actively monitors the game state.
-- **Capabilities:** signal-detection, spire-analysis, multi-signal-orchestration, opportunity-management, real-time-monitoring, predictive-analytics, mcp-command-execution.
-- **Agent API:** Available at `[PLACEHOLDER_APP_URL]/api/agent`
-- **MCP Protocol Endpoint:** Available at `[PLACEHOLDER_APP_URL]/api/mcp` for active command execution via the Model Context Protocol.
-- **Agent Card:** Served at `[PLACEHOLDER_APP_URL]/.well-known/agent-card.json` for A2A discovery.
 
-### Protocol Connections
-- The MCP endpoint uses standard JSON over HTTP for agent interactions.
-- Send valid `POST` requests directly to the MCP route for orchestrated actions.
+### Capabilities & Skills
+- **Signal Detection:** Detects signals and anomalies in the spire.
+- **Spire Analysis:** Analyzes the structural integrity and stability of the spire.
+- **Multi-Signal Orchestration:** Manages and orchestrates multiple signal streams simultaneously.
+- **Opportunity Management:** Identifies and manages intelligent opportunities based on predictive analytics.
 
-## 🛠️ Stack & Architecture
-- **Frontend Layer:** React 19, TypeScript, Vite, Tailwind CSS (Mobile-first, PWA ready)
+### Agent Registration & Endpoints
+- **Agent Card (A2A Discovery):** `https://signal-spiree.vercel.app/.well-known/agent-card.json`
+- **Agent Main API:** `https://signal-spiree.vercel.app/api/agent`
+- **MCP Protocol Endpoint:** `https://signal-spiree.vercel.app/api/mcp`
+
+### MCP Connection Guide
+The MCP Server supports `initialize`, `tools/list`, and `tools/call` JSON-RPC 2.0 requests over HTTP.
+To interact with the MCP route, send a raw JSON-RPC POST request:
+```json
+POST /api/mcp
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/call",
+  "params": {
+    "name": "get_race_status",
+    "arguments": {}
+  }
+}
+```
+
+## 🛠️ Tech Stack & Architecture
+- **Frontend Layer:** React 19, TypeScript, Vite, Tailwind CSS
 - **Game Engine:** Custom high-performance HTML5 Canvas renderer
 - **Blockchain Layer:** Wagmi + Viem
 - **API Architecture:** Next.js App Router format (`app/api/`)
 
-## 🚀 Quick Start
+## 🚀 Local Setup & Quick Start
 1. Clone the repository natively.
 2. Install dependencies: `npm install`
 3. Setup `.env` (Use `.env.example` as a template. Do NOT commit private keys).
 4. Run locally: `npm run dev` (Runs on `http://localhost:3000`)
-5. **Deployment:** Refer to your platform's documentation for deploying generic API functions or Next-native applications.
+5. **Deployment:** The project is configured for deployment to platforms supporting standard Next.js or Node-based API handlers.
