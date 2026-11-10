@@ -1,11 +1,18 @@
 {
   "name": "Signal Spire Orchestrator",
-  "description": "Signal Spire platformunda çalışan ERC-8004 uyumlu AI Agent. Advanced signal detection, spire analysis, multi-signal orchestration ve intelligent opportunity management yapan güçlü orchestrator.",
-  "version": "1.0.0",
+  "description": "Signal Spire platformunda çalışan ERC-8004 uyumlu AI Agent. Base Mainnet (Denim Upgrade, 200ms canonical blocks) üzerinde real-time signal detection, spire analysis ve multi-signal orchestration gerçekleştirir.",
+  "version": "1.1.0",
   "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
   "image": "https://signal-spiree.vercel.app/logo.png",
   "wallets": {
     "base": "0x29536D0bc1004ab274c4F0F59734Ad74D4559b7B"
+  },
+  "network": {
+    "chain": "Base Mainnet",
+    "chainId": 8453,
+    "upgrade": "Denim",
+    "blockTime": "200ms",
+    "rpc": "https://mainnet.base.org"
   },
   "services": [
     {
@@ -56,7 +63,8 @@
     "opportunity-management",
     "real-time-monitoring",
     "predictive-analytics",
-    "mcp-command-execution"
+    "mcp-command-execution",
+    "base-denim-200ms-support"
   ],
   "supportedChains": ["eip155:8453"],
   "active": true,
